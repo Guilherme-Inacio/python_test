@@ -1,7 +1,7 @@
 # Usando a funçao TIME
 from time import sleep
 
-usuario = input(str("Digite o seu nome: ")).strip()
+usuario = input(str("Digite o seu nome: ")).strip().title()
 
 # Adicionando as listas
 alimentos = []
@@ -12,7 +12,7 @@ alimentos_desconhecidos = []
 # Indice I para a contagem 
 i = 0
 
-print(f"Olá, {usuario}.").strip().tittle()
+print(f"Olá, {usuario}.")
 
 # Usuario informando os 5 alimentos 
 print("Informe os 5 alimentos que voce mais consome no dia a dia.")
@@ -22,7 +22,8 @@ while i < 5:
     i = i + 1
 
 # Transformando a lista em um string unica com .join()
-comida_usuario = ", ".join(alimentos)
+comida_usuario = ", ".join(alimentos).title()
+sleep(1)
 print(f"Os alimentos que voce digitou: {comida_usuario}")
 
 # Lista de alimentos saudaveis e nao saudaveis 
@@ -41,14 +42,14 @@ for comida in alimentos:
 sleep(1)
 
 # Printando para o usuario o resultado final 
-comida_saudavel = ", ".join(alimentos_saudaveis).tittle()
-print(f"Alimentos considerados saudaveis:{comida_saudavel}")
-comida_nao_saudavel = ", ".join(alimentos_nao_saudaveis).tittle()
-print(f"Alimentos considerados nao saudaveis: {comida_nao_saudavel}")
-comida_desconhecida = ", ".join(alimentos_desconhecidos).tittle()
-print(f"Alimentos desconhecidos pelo aplicativo: {comida_desconhecida}\n")
+comida_saudavel = ", ".join(alimentos_saudaveis).title()
+print(f"Alimentos considerados saudaveis: {comida_saudavel}.")
+comida_nao_saudavel = ", ".join(alimentos_nao_saudaveis).title()
+print(f"Alimentos considerados nao saudaveis: {comida_nao_saudavel}.")
+comida_desconhecida = ", ".join(alimentos_desconhecidos).title()
+print(f"Alimentos desconhecidos pelo aplicativo: {comida_desconhecida}.\n")
 sleep(0.8)
-print("------------------FIM------------------")
+print("------------------FIM------------------\n")
 
 
 # APLICATIVO DE CARDAPIO SEMANAL
@@ -69,10 +70,10 @@ cardapio = {
 
 # Preenchendo as listas dentro do dicionario
 for dia in cardapio:
-    print(f"Informe o cardapio de {dia}")
+    print(f"Informe o cardapio de {dia}.")
     # Informando os alimentos dos dias
     for a in range(0,5):
-        comidas_dias = input(str(f"informe o {a+1}  alimento")).strip().lower()
+        comidas_dias = input(str(f"informe o {a+1}  alimento: ")).strip().lower()
         cardapio[dia].append(comidas_dias)
 
 sleep(1)
@@ -81,3 +82,6 @@ sleep(1)
 for dia in cardapio:
     comida =", ".join(cardapio[dia])
     print(f"{dia}: {comida}\n")
+
+sleep(0.8)
+print("------------------FIM------------------")
